@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siisti Lahjoituspainike</title>
+    <style>
+	 section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+	h3 {
+	font-family:cursive;
+	}
+        p {
+            font-family: cursive;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input, select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #confirmationMessage {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        #confirmationMessage.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        .float {
+            animation: float 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">Lahjoita Nyt</h1>
+        <input type="number" id="donationAmount" placeholder="Syötä summa" min="1" />
+        <select id="donationDestination">
+            <option value="" disabled selected>Valitse lahjoituskohde</option>
+            <option value="Hyväntekeväisyys A">Hyväntekeväisyys A</option>
+            <option value="Hyväntekeväisyys B">Hyväntekeväisyys B</option>
+            <option value="Hyväntekeväisyys C">Hyväntekeväisyys C</option>
+            <option value="Hyväntekeväisyys D">Hyväntekeväisyys D</option>
+	    <option value="kaupungin remontit">kaupungin remontit</option>
+        </select>
+        <button id="donateButton">Lahjoita</button>
+        <div id="confirmationMessage" class="hidden float">Kiitos lahjoituksestasi! 💖</div>
+        <section id="tekstiaa">
+        <!-- explaining the donation -->
+        <div id="donationInfo" style="margin-top: 20px;">
+            <p>
+		Valitsemalla lahjoituskohteen, autat meitä tukemaan tärkeitä asioita, <br/>
+		kuten köyhyyden vähentämistä, koulutusta ja terveydenhuoltoa. <br/>
+		Jokainen lahjoitus auttaa! <br/>
+		sinun nimi myös näkyy lajoittamasi yrityksen nettisivulla!
+	    </p>
+	    <br/>
+	    <h3>Hyväntekeväisyys A.</h3>
+	    <p>Laittamalla rahaa lahjoitus A:aahan autat kaupungin kunnostamaan <br/>
+	    leikkipuistoja ja ulkoilu kenttiä</p>
+	    <h3>Hyväntekeväisyys B.</h3>
+	    <p>Autat pieniä yksityis yrityksiä (esim):enemmän yhteiskumppaneita </p>
+	    <p>Autat meitä koska... *insert text here*</p>
+	    <h3>Hyväntekeväisyys B</h3>
+	    <p>*insert text here*</p>
+
+	    <!-- näitä ei oo enempää koska se glitchaa -->
+	    <!-- <h3>Hyväntekeväisyys C</h3>
+	    <p>*insert text here*</p>
+	    <h3>Hyväntekeväisyys D</h3>
+	    <p>*insert text here*</p>
+	    <h3>kaupungin remontit</h3>
+	    <p>*insert text here*</p> -->
+	    </p>
+        </div>
+    </div>
+</section>
+
+    <script>
+        document.getElementById('donateButton').addEventListener('click', function() {
+            const donationInput = document.getElementById('donationAmount');
+            const donationDestination = document.getElementById('donationDestination');
+            const header = document.getElementById('header');
+	    const teksti = document.getElementById('tekstiaa');
+            const amount = donationInput.value;
+            const destination = donationDestination.value;
+
+            if (amount && destination) {
+		if (amount <= 0) { // tää on huonoa koodia, mä tiiän sen, sä tiiät sen. Unohda että tää on olemassa.
+		    alert('lahjoita järkevä määrä');
+		} else {
+                    // Simuloidaan lahjoitusprosessia
+                    alert(`Olet lahjoittanut ${amount}€ kohteeseen ${destination}!`);
+
+                    // Piilotetaan syöte, valinta ja painike
+                    donationInput.value = ''; // Tyhjennetään syöte
+                    donationInput.style.display = 'none'; // Piilotetaan syötekenttä
+                    donationDestination.style.display = 'none'; // Piilotetaan valintakenttä
+                    this.style.display = 'none'; // Piilotetaan painike
+		    teksti.style.display = 'none';
+                    header.innerHTML = 'Lahjoitit Nyt';
+    
+                    // Näytetään vahvistusviesti animaatiolla
+                    const confirmationMessage = document.getElementById('confirmationMessage');
+                    confirmationMessage.classList.remove('hidden');
+                    confirmationMessage.classList.add('show');
+		}
+            } else {
+                alert('Ole hyvä ja syötä lahjoitussumma ja valitse kohde.');
+            }
+        });
+    </script>
+</body>
+</html>
