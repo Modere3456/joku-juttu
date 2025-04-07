@@ -97,11 +97,11 @@
         <input type="number" id="donationAmount" placeholder="Syötä summa" min="1" />
         <select id="donationDestination">
             <option value="" disabled selected>Valitse lahjoituskohde</option>
-            <option value="Hyväntekeväisyys A">Hyväntekeväisyys A</option>
-            <option value="Hyväntekeväisyys B">Hyväntekeväisyys B</option>
-            <option value="Hyväntekeväisyys C">Hyväntekeväisyys C</option>
-            <option value="Hyväntekeväisyys D">Hyväntekeväisyys D</option>
-	    <option value="kaupungin remontit">kaupungin remontit</option>
+            <option value="leikkipuisto">leikkipuisto</option>
+            <option value="hyväntekeväisyys">Hyväntekeväisyys</option>
+            <option value="vanhainkodit">vanhainkodit</option>
+            <option value="pien yrittäjät">pien yrittäjät</option>
+	    <option value="julkiset palvelut">julkiset palvelut</option>
         </select>
         <button id="donateButton">Lahjoita</button>
         <div id="confirmationMessage" class="hidden float">Kiitos lahjoituksestasi! 💖</div>
@@ -112,25 +112,9 @@
 		Valitsemalla lahjoituskohteen, autat meitä tukemaan tärkeitä asioita, <br/>
 		kuten köyhyyden vähentämistä, koulutusta ja terveydenhuoltoa. <br/>
 		Jokainen lahjoitus auttaa! <br/>
-		sinun nimi myös näkyy lajoittamasi yrityksen nettisivulla!
-	    </p>
-	    <br/>
-	    <h3>Hyväntekeväisyys A.</h3>
-	    <p>Laittamalla rahaa lahjoitus A:aahan autat kaupungin kunnostamaan <br/>
-	    leikkipuistoja ja ulkoilu kenttiä</p>
-	    <h3>Hyväntekeväisyys B.</h3>
-	    <p>Autat pieniä yksityis yrityksiä (esim):enemmän yhteiskumppaneita </p>
-	    <p>Autat meitä koska... *insert text here*</p>
-	    <h3>Hyväntekeväisyys B</h3>
-	    <p>*insert text here*</p>
-
-	    <!-- näitä ei oo enempää koska se glitchaa -->
-	    <!-- <h3>Hyväntekeväisyys C</h3>
-	    <p>*insert text here*</p>
-	    <h3>Hyväntekeväisyys D</h3>
-	    <p>*insert text here*</p>
-	    <h3>kaupungin remontit</h3>
-	    <p>*insert text here*</p> -->
+		<br/>
+		Sinun nimi myös näkyy lajoittamasi <br/>
+		yrityksen nettisivulla / jossain niiden paikassa!
 	    </p>
         </div>
     </div>
@@ -170,5 +154,6 @@
             }
         });
     </script>
+
 </body>
 </html>
