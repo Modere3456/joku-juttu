@@ -17,7 +17,7 @@ lahjoitus -> 5% meille, 95% yritykselle
 jotain tärkeitä juttuja:
 
 Leijonille tarjouksen pää idea on se että niiden nimi on meidän lahjoitus nettisivulla eikä raha.
-Ei mainita tota 0,25% leijonille kohtaa.
+/!\ Ei mainita tota 0,25% leijonille kohtaa /!\.
 5 000€ menee yrityksen laajentamiseen.
 
 
