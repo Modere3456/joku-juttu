@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lahjoita nyt</title>
     <style>
-	 section {
+        section {
             margin: 20px 0;
             padding: 20px;
             background: white;
@@ -13,12 +14,15 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-	h3 {
-	font-family:cursive;
-	}
+
+        h3 {
+            font-family: cursive;
+        }
+
         p {
             font-family: cursive;
         }
+
         body {
             display: flex;
             justify-content: center;
@@ -33,7 +37,8 @@
             text-align: center;
         }
 
-        input, select {
+        input,
+        select {
             padding: 10px;
             font-size: 16px;
             margin-bottom: 20px;
@@ -42,7 +47,8 @@
             transition: transform 0.3s ease;
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             transform: scale(1.05);
         }
 
@@ -81,9 +87,17 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
         }
 
         .float {
@@ -91,6 +105,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1 id="header">Lahjoita Nyt</h1>
@@ -101,41 +116,41 @@
             <option value="hyväntekeväisyys">Hyväntekeväisyys</option>
             <option value="vanhainkodit">vanhainkodit</option>
             <option value="pien yrittäjät">pien yrittäjät</option>
-	    <option value="julkiset palvelut">julkiset palvelut</option>
+            <option value="julkiset palvelut">julkiset palvelut</option>
         </select>
         <button id="donateButton">Lahjoita</button>
         <div id="confirmationMessage" class="hidden float">
-	    Kiitos lahjoituksestasi! 💖 <br/>
-	    se voi merkitä paljon jollekin!
-	</div>
-        <section id="tekstiaa">
-        <!-- explaining the donation -->
-        <div id="donationInfo" style="margin-top: 20px;">
-            <p>
-		Valitsemalla lahjoituskohteen, autat meitä tukemaan tärkeitä asioita, <br/>
-		kuten köyhyyden vähentämistä, koulutusta ja terveydenhuoltoa. <br/>
-		Jokainen lahjoitus auttaa! <br/>
-		<br/>
-		Sinun nimi myös näkyy lajoittamasi <br/>
-		yrityksen nettisivulla!
-	    </p>
+            Kiitos lahjoituksestasi! 💖 <br />
+            se voi merkitä paljon jollekin!
         </div>
+        <section id="tekstiaa">
+            <!-- explaining the donation -->
+            <div id="donationInfo" style="margin-top: 20px;">
+                <p>
+                    Valitsemalla lahjoituskohteen, autat meitä tukemaan tärkeitä asioita, <br />
+                    kuten köyhyyden vähentämistä, koulutusta ja terveydenhuoltoa. <br />
+                    Jokainen lahjoitus auttaa! <br />
+                    <br />
+                    Sinun nimi myös näkyy lajoittamasi <br />
+                    yrityksen nettisivulla!
+                </p>
+            </div>
     </div>
-</section>
+    </section>
 
     <script>
-        document.getElementById('donateButton').addEventListener('click', function() {
+        document.getElementById('donateButton').addEventListener('click', function () {
             const donationInput = document.getElementById('donationAmount');
             const donationDestination = document.getElementById('donationDestination');
             const header = document.getElementById('header');
-	    const teksti = document.getElementById('tekstiaa');
+            const teksti = document.getElementById('tekstiaa');
             const amount = donationInput.value;
             const destination = donationDestination.value;
 
             if (amount && destination) {
-		if (amount < 0.01) { // tää on huonoa koodia, mä tiiän sen, sä tiiät sen. Unohda että tää on olemassa.
-		    alert('lahjoita järkevä määrä');
-		} else {
+                if (amount < 0.01) { // tää on huonoa koodia, mä tiiän sen, sä tiiät sen. Unohda että tää on olemassa.
+                    alert('lahjoita järkevä määrä');
+                } else {
                     // Simuloidaan lahjoitusprosessia
                     alert(`Olet lahjoittanut ${amount}€ kohteeseen ${destination}!`);
 
@@ -144,14 +159,14 @@
                     donationInput.style.display = 'none'; // Piilotetaan syötekenttä
                     donationDestination.style.display = 'none'; // Piilotetaan valintakenttä
                     this.style.display = 'none'; // Piilotetaan painike
-		    teksti.style.display = 'none';
+                    teksti.style.display = 'none';
                     header.innerHTML = 'Lahjoitit Nyt';
-    
+
                     // Näytetään vahvistusviesti animaatiolla
                     const confirmationMessage = document.getElementById('confirmationMessage');
                     confirmationMessage.classList.remove('hidden');
                     confirmationMessage.classList.add('show');
-		}
+                }
             } else {
                 alert('Ole hyvä ja syötä lahjoitussumma ja valitse kohde.');
             }
@@ -159,4 +174,5 @@
     </script>
 
 </body>
+
 </html>
