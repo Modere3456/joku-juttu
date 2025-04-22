@@ -109,6 +109,7 @@
 <body>
     <div class="container">
         <h1 id="header">Lahjoita Nyt</h1>
+        <input type="text" name="nimi" id="nimi" placeholder="nimi" />
         <input type="number" id="donationAmount" placeholder="Syötä summa" />
         <select id="donationDestination">
             <option value="" disabled selected>Valitse lahjoituskohde</option>
@@ -146,10 +147,11 @@
             const donationDestination = document.getElementById('donationDestination');
             const header = document.getElementById('header');
             const teksti = document.getElementById('tekstiaa');
+            const nimi = document.getElementById('nimi');
             const amount = donationInput.value;
             const destination = donationDestination.value;
 
-            if (amount && destination) {
+            if (amount && destination && nimi) {
                 if (amount < 0.01) { // tää on huonoa koodia, mä tiiän sen, sä tiiät sen. Unohda että tää on olemassa.
                     alert('lahjoita järkevä määrä');
                 } else {
@@ -162,6 +164,7 @@
                     donationDestination.style.display = 'none'; // Piilotetaan valintakenttä
                     this.style.display = 'none'; // Piilotetaan painike
                     teksti.style.display = 'none';
+                    nimi.style.display = 'none';
                     header.innerHTML = 'Lahjoitit Nyt';
 
                     // Näytetään vahvistusviesti animaatiolla
