@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kysely</title>
+    <style>
+        p {
+            font-family: cursive;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kysely</h1>
+        <div id="questionContainer">
+            <!-- Question will be injected here -->
+        </div>
+        <div id="summary" class="hidden">
+            <p>Et voi piiloutua totuudelta</p>
+            <h2>Vastauksesi:</h2>
+            <p id="summaryText"></p>
+            <a href="./leijona.html">takaisin</a>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "Miltä sinusta tuntuu, että monilla lapsilla ei ole kunnollista päiväkotia tai pitää matkutaa monta kilometriä päästäkseen sinne?",
+            "Miltä sinusta tuntuu, että ilmastonmuutos uhkaa tulevaisuuttamme?",
+            "Miltä sinusta tuntuu, että monilla ihmisillä ei ole kattoa pään päällä?",
+            "Miltä sinusta tuntuu, että monet lapset kuolee siraukesiin kehitys maissa?",
+            "Miltä sinusta tuntuu, että monissa paikoissa ei edes ole kunnoillista leikkipuistoa?"
+        ];
+
+        const answers = {};
+        let currentQuestionIndex = 0;
+
+        function showQuestion() {
+            const questionContainer = document.getElementById('questionContainer');
+            questionContainer.innerHTML = `
+                <div class="question">
+                    <p>${questions[currentQuestionIndex]}</p>
+                    <div class="options">
+                        <button onclick="saveAnswer('Pahalta')">Pahalta</button>
+                        <button onclick="saveAnswer('Hyvältä')">Hyvältä</button>
+                        <button onclick="saveAnswer('En osaa sanoa')">En osaa sanoa</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function saveAnswer(answer) {
+            answers[currentQuestionIndex + 1] = answer; // Store answer with question number
+            currentQuestionIndex++; // Move to the next question
+
+            if (currentQuestionIndex < questions.length) {
+                showQuestion(); // Show the next question
+            } else {
+                showSummary(); // Show summary if all questions are answered
+            }
+        }
+
+        function showSummary() {
+            const questionContainer = document.getElementById('questionContainer');
+            const summaryDiv = document.getElementById('summary');
+            const summaryText = document.getElementById('summaryText');
+
+            // Hide questions and show summary
+            questionContainer.classList.add('hidden');
+            summaryDiv.classList.remove('hidden');
+
+            // Build summary text
+            let summary = '';
+            for (let i = 1; i <= questions.length; i++) {
+                summary += `<strong>Kysymys ${i}:</strong> ${answers[i]}<br>`;
+            }
+            summaryText.innerHTML = summary;
+        }
+
+        // Start the questionnaire
+        showQuestion();
+    </script>
+</body>
+
+</html>
