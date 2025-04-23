@@ -1,4 +1,4 @@
-Lahjoitusvoima
+LahjoitusVoima
 
 lahjoitus -> 5% meille, 95% yritykselle
 5 000€ -> leijonan nimi nettisivulla (+maybe 5% eli kokonaisesta lahjoituksesta 0,25% leijonille <- (ei mainita tota kohtaa))
@@ -26,9 +26,14 @@ myyntipuhe (leijonille):
 
 LahjoitusVoima
 
-jos liityt LahjoitusVoimaan 5 000€:lla saat 5% ja sinun nimesi meidän sivulla.
 
-LahjoitusVoima on nettisivu, jossa voi lahjoittaa eri yrityksille. Tässä esimerkissä on *vaihtoehdot*.
+Haluatko auttaa yrityksiä ja projekteja jotka tarvitsee rahaa?
+Nyt voit lahjoitusVoiman avulla!
+
+Jos liityt LahjoitusVoimaan 5 000€:lla saat 5% ja sinun nimesi meidän sivulla.
+
+LahjoitusVoima on nettisivu, joka on yhteistyössä Punaisen Ristin kanssa.
+Siinä voi lahjoittaa eri yrityksille. Tässä esimerkissä on *vaihtoehdot*.
 Jos lahjoitat nimesi myös näkyy lahjoittamasi yrityksen nettisivulta.
 
 LahjoitusVoimalla ei saa todella paljon rahaa, mutta saat sinun nimesi meidän lahjoitus nettisivulle,
