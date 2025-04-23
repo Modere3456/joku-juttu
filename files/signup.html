@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tee käyttäjä</title>
+    <link rel="shortcut icon" href="../kuvat/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .second {
+            display: none;
+        }
+
+        input:focus {
+            transform: scale(1.05);
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main">tee käyttäjä</h1>
+    <p class="main">tällä voit kirjata sinun yrityksesi LahjoitusVoiman lahjoitus vaihtoehdoksi</p>
+    <input type="text" name="name" id="name" class="main" placeholder="yrityksen nimi" />
+    <input type="email" name="email" id="email" class="main" placeholder="email" />
+    <button type="button" class="main" onclick="login()">kirjaudu</button>
+    <p class="second">kiitos!!!</p>
+    <script>
+        function login() {
+            const mains = document.getElementsByClassName('main');
+            const seconds = document.getElementsByClassName('second');
+            for (let i = 0; i < mains.length; i++) {
+                const element = mains[i];
+                element.style.display = 'none';
+            }
+            for (let i = 0; i < seconds.length; i++) {
+                const element = seconds[i];
+                element.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
