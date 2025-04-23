@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,7 @@
         }
     </style>
 </head>
+
 <body>
     <textarea id="writingArea" placeholder="Start typing here..."></textarea>
     <button id="sendButton">Send</button>
@@ -89,10 +91,11 @@
         // Save logs when the Enter key is pressed
         writingArea.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' && !event.shiftKey) {
-                 event.preventDefault(); // Prevent newline in textarea
+                event.preventDefault(); // Prevent newline in textarea
                 saveLog(writingArea.value.trim());
             }
         });
     </script>
 </body>
+
 </html>
