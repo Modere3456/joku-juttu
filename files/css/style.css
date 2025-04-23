@@ -1,6 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
 section {
-    margin: 50px 0;
-    padding: 50px;
+    margin: 20px 0;
+    padding: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -8,24 +19,8 @@ section {
     font-family: cursive;
 }
 
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-
 .container {
     text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 input,
@@ -95,6 +90,35 @@ button:hover {
     animation: float 2s infinite;
 }
 
+a {
+    margin: 14px;
+    margin-left: 0px;
+}
+
+/* kysely */
+
+.question {
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kysely {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* koodikenttä */
+
 textarea {
     width: 100%;
     height: 200px;
@@ -103,7 +127,6 @@ textarea {
     border: 2px solid #007BFF;
     border-radius: 5px;
     resize: none;
-    margin-top: 20px;
 }
 
 #logs {
@@ -117,4 +140,19 @@ textarea {
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
+}
+
+#sendButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background-color: #0056b3;
 }
