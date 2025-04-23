@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../kuvat/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>LahjoitusVoima</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../kuvat/logo.jpg" width="250" height="200" />
+        <h1 id="header">Lahjoita Nyt</h1>
+        <input type="text" name="nimi" id="nimi" placeholder="nimi" />
+        <input type="number" id="donationAmount" placeholder="Syötä summa" />
+        <select id="donationDestination">
+            <option value="" disabled selected>Valitse lahjoituskohde</option>
+            <option value="leikkipuisto">leikkipuisto</option>
+            <option value="hyväntekeväisyys">Hyväntekeväisyys</option>
+            <option value="vanhainkodit">vanhainkodit</option>
+            <option value="pien yrittäjät">pien yrittäjät</option>
+            <option value="julkiset palvelut">julkiset palvelut</option>
+        </select>
+        <button id="donateButton">Lahjoita</button>
+        <div id="confirmationMessage" class="hidden float">
+            Kiitos lahjoituksestasi! 💖
+        </div>
+        <section id="tekstiaa">
+            <!-- explaining the donation -->
+            <div id="donationInfo" style="margin-top: 20px;">
+                <p>
+                    Valitsemalla lahjoituskohteen, autat meitä tukemaan tärkeitä asioita, <br />
+                    kuten köyhyyden vähentämistä, koulutusta ja terveydenhuoltoa. <br />
+                    Jokainen lahjoitus auttaa! <br />
+                    <br />
+                    Sinun nimi myös näkyy lajoittamasi <br />
+                    yrityksen nettisivulla! <br />
+                    <br />
+                    <a href="./about.html">lue lisää</a> <br />
+                    <a href="./ohje.html">ohje lahjoittamiseen</a> <br />
+                    <a href="./kysely.html">Mielipide kysely</a>
+                </p>
+            </div>
+    </div>
+    </section>
+
+    <script src="../javascript/index.js"></script>
+
+</body>
+
+</html>
