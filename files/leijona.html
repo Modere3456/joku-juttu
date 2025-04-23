@@ -154,7 +154,7 @@
             const amount = donationInput.value;
             const destination = donationDestination.value;
 
-            if (amount && destination && nimi) {
+            if (amount && destination && nimi.value) {
                 if (amount < 0.01) { // tää on huonoa koodia, mä tiiän sen, sä tiiät sen. Unohda että tää on olemassa.
                     alert('lahjoita järkevä määrä');
                 } else {
