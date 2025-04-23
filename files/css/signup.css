@@ -41,3 +41,7 @@ input {
     transition: transform 0.3s ease;
     margin: 5px;
 }
+
+a {
+    margin: 14px;
+}
