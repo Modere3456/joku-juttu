@@ -150,6 +150,7 @@
             const header = document.getElementById('header');
             const teksti = document.getElementById('tekstiaa');
             const nimi = document.getElementById('nimi');
+	    const msg = document.getElementById('confirmationMessage');
             const amount = donationInput.value;
             const destination = donationDestination.value;
 
@@ -168,6 +169,7 @@
                     teksti.style.display = 'none';
                     nimi.style.display = 'none';
                     header.innerHTML = 'Lahjoitit Nyt';
+		    msg.innerHTML = `Kiitos lahjoituksestasi ${nimi.value}! 💖`
 
                     // Näytetään vahvistusviesti animaatiolla
                     const confirmationMessage = document.getElementById('confirmationMessage');
